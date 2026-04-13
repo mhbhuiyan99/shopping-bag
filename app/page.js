@@ -5,7 +5,7 @@ import Products from "./homepage/Products";
 
 export default function Home() {
   return (
-    <div class={style.homepage}>
+    <div className={style.homepage}>
       <Hero />
       <Categories />
       <Products />
