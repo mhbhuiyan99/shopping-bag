@@ -1,12 +1,12 @@
 import styles from "./page.module.css";
 import Image from "next/image";
+import AddToBag from "../AddToBag";
+import { formatPrice } from "../../util";
 
 export default async function page({params}) {
   const {id} = await params
   const data = await fetch(`https://dummyjson.com/products/${id}`);
   const product = await data.json();
-
-  console.log(product)
 
   return (
     <div className={`${styles['product-page']} container`}>
@@ -22,12 +22,10 @@ export default async function page({params}) {
 
       <section className={styles.info}>
         <h1>{product.title}</h1>
-        <p className={styles.price}>$ {product.price}</p>
+        <p className={styles.price}>{formatPrice(product.price)}</p>
         <p>{product.description}</p> 
 
-        <div className={styles['add-to-cart']}>
-          <button>Add to Cart</button>
-        </div>
+        <AddToBag product={product} />
         
       </section>
 
