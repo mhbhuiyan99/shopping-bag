@@ -1,7 +1,8 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import AddToBag from "../AddToBag";
-import { formatPrice } from "../../util";
+import { formatPrice } from "@/app/util";
+
 
 export default async function page({params}) {
   const {id} = await params

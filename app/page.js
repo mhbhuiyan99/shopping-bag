@@ -6,9 +6,11 @@ import Products from "./homepage/Products";
 export default function Home() {
   return (
     <div className={style.homepage}>
+
       <Hero />
       <Categories />
       <Products />
+
     </div>
   );
 }
