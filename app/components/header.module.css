@@ -3,7 +3,7 @@ header.app-header {
 
   .wrapper {
     height: 60px;
-    dislay: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 

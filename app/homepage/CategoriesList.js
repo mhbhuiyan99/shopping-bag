@@ -1,17 +1,20 @@
 import styles from "./categoriesList.module.css"
+import Link from "next/link";
 
 export default async function CategoriesList() {
 
     const data = await fetch("https://dummyjson.com/products/categories")
-    const catagories = await data.json();
+    const categories = await data.json();
 
   return (
     <ul className={`${styles.wrapper} container`}>
             {
-              catagories.map(catagory => (
-                <li key={catagory.slug} className={styles.catagory}>
-                  {catagory.name}
-                </li>
+              categories.map(category => (
+                <Link key={category.slug} href={`/products/${category.slug}`}>
+                  <li className={styles.catagory}>
+                    {category.name}
+                  </li>
+                </Link>
               ))
             }
        </ul>
