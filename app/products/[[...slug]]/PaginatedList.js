@@ -41,7 +41,12 @@ export default function PaginatedList({ category, initialProducts, totalProducts
         ""
       )}
 
-      {error && <p> {error} </p>}
+      <p> Showing {products.length} of {totalProducts} products </p>
+
+      {
+        error && 
+        <p> {error} </p>
+      }
     </>
   );
 }
